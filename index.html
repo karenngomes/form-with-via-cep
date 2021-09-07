@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Consulta de CEP</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="div-row-search" class="row">
+        <div class="card">
+          <div class="card-body">
+            <form id="form-search" onsubmit="event.preventDefault()" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-2">
+                  <label for="cep-search">CEP</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cep-search"
+                    placeholder="Para onde você vai?"
+                    required
+                    oninput="$(this).mask('00000-000');onChangeInputCep()"
+                  />
+                  <div class="invalid-feedback">Selecione um CEP válido</div>
+                </div>
+                <div class="col-md-4 div-btn-submit">
+                  <button
+                    type="submit"
+                    onclick="handleClickSearch()"
+                    class="btn btn-outline-success"
+                    id="btn-submit"
+                  >
+                    Consultar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+            <div class="card">
+              <div class="card-body">
+                
+              </div>
+            </div>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  </body>
+</html>
