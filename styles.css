@@ -2,11 +2,16 @@
   width: max-content;
 }
 
-.flex {
+.flex, .form-row {
   display: flex;
 }
 
 .bold {
   font-weight: 600;
   margin-right: 5px;
+}
+
+.div-btn-submit {
+  margin-left: 20px;
+  margin-top: 24px;
 }

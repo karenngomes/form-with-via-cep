@@ -6,6 +6,9 @@ let data = {};
 const cepSearch = document.querySelector("#cep-search");
 const divRowSearch = document.querySelector("#div-row-search");
 
+const firstContainer = document.getElementById('container')
+firstContainer.style.marginTop = '50px'
+
 function onChangeInputCep() {
   if (cepSearch.value.length === 9) {
     console.log();
@@ -46,6 +49,7 @@ function renderCepData() {
   let card = document.createElement("div");
   card.setAttribute("class", "card");
   card.setAttribute("id", "card-cep-data");
+  card.setAttribute("style", "margin-top: 20px");
 
   let cardBody = document.createElement("div");
   cardBody.setAttribute("class", "card-body");
