@@ -1,0 +1,12 @@
+#card-cep-data {
+  width: max-content;
+}
+
+.flex {
+  display: flex;
+}
+
+.bold {
+  font-weight: 600;
+  margin-right: 5px;
+}

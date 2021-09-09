@@ -4,6 +4,7 @@ const API_URL_BASE = "https://brasilapi.com.br/api/cep/v1";
 let data = {};
 
 const cepSearch = document.querySelector("#cep-search");
+const divRowSearch = document.querySelector("#div-row-search");
 
 function onChangeInputCep() {
   if (cepSearch.value.length === 9) {
@@ -42,5 +43,42 @@ async function fetchData(API_URL) {
 }
 
 function renderCepData() {
-  console.log(data);
+  let card = document.createElement("div");
+  card.setAttribute("class", "card");
+  card.setAttribute("id", "card-cep-data");
+
+  let cardBody = document.createElement("div");
+  cardBody.setAttribute("class", "card-body");
+
+  cardBody.innerHTML = `
+    <div id="container-cep-data">
+      <div class="flex">
+        <p class="bold">CEP: </p>
+        <p>${data.cep}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Rua: </p>
+        <p> ${data.street}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Bairro: </p>
+        <p> ${data.neighborhood}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Cidade: </p>
+        <p> ${data.city}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Estado: </p>
+        <p> ${data.state}</p>
+      </div>
+      <div class="flex">
+        <p class="bold">Serviço: </p>
+        <p> ${data.service}</p>
+      </div>
+    </div>
+  `;
+
+  card.appendChild(cardBody);
+  divRowSearch.appendChild(card);
 }
